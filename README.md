@@ -22,8 +22,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Lint Ansible Playbook
-      # replace "master" with any valid ref
-      uses: ansible/ansible-lint-action@master
+      # replace "main" with any valid ref
+      uses: osism/ansible-lint-action@main
       with:
         # [required]
         # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
@@ -66,7 +66,7 @@ jobs:
 
 ```
 
-> TIP: N.B. Use `ansible/ansible-lint-action@v4.1.0` or any other valid tag, or branch, or commit SHA instead of `v4.1.0` to pin the action to use a specific version.
+> TIP: N.B. Use `osism/ansible-lint-action@v4.1.0` or any other valid tag, or branch, or commit SHA instead of `v4.1.0` to pin the action to use a specific version.
 
 Alternatively, you can run the ansible lint only on certain branches:
 
@@ -90,3 +90,5 @@ The Dockerfile and associated scripts and documentation in this project are rele
 ## Credits
 The initial GitHub action has been created by [Stefan Stölzle](https://github.com/stoe) at
 [stoe/actions](https://github.com/stoe/actions).
+
+This fork is based on [ansible/ansible-lint-action](https://github.com/osism/ansible-lint-action).

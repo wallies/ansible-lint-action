@@ -1,6 +1,7 @@
+---
 name: Ansible Lint
 description: Run Ansible Lint
-author: Ansible by Red Hat <info@ansible.com>
+author: OSISM <info@osism.tech>
 
 inputs:
   args:
