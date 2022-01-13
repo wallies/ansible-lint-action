@@ -1,19 +1,26 @@
-# Ansible Lint for GitHub Action
+# Ansible Lint for GitHub Actions
+
 This action allows you to run `ansible-lint` with no additional options.
 
+| Version | ansible-lint | ansible |
+|---------|--------------|---------|
+| main    | 5.3.2        | 5.2.0   |
+| v1.0.0  | 5.3.2        | 5.2.0   |
 
 ## Usage
-To use the action simply create an `ansible-lint.yml` (or choose custom `*.yml` name) in the `.github/workflows/` directory.
+
+To use the action simply create an `check-ansible-syntax.yml` file
+(or choose custom `*.yml` name) in the `.github/workflows/` directory.
 
 For example:
 
 ```yaml
-name: Ansible Lint  # feel free to pick your own name
+name: Check ansible syntax  # feel free to pick your own name
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  check-ansible-syntax:
 
     runs-on: ubuntu-latest
 
@@ -38,8 +45,8 @@ jobs:
         # Arguments to override a package and its version to be set explicitly.
         # Must follow the example syntax.
         override-deps: |
-          ansible==2.9
-          ansible-lint==4.2.0
+          ansible==5.2.0
+          ansible-lint==5.3.2
         # [optional]
         # Arguments to be passed to the ansible-lint
 
@@ -66,29 +73,14 @@ jobs:
 
 ```
 
-> TIP: N.B. Use `osism/ansible-lint-action@v4.1.0` or any other valid tag, or branch, or commit SHA instead of `v4.1.0` to pin the action to use a specific version.
-
-Alternatively, you can run the ansible lint only on certain branches:
-
-```yaml
-
-on:
-  push:
-    branches:
-    - stable
-    - release/v*
-```
-
-or on various [events](https://help.github.com/en/articles/events-that-trigger-workflows)
-
-<br>
-
 ## License
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT](license).
 
+The Dockerfile and associated scripts and documentation in this project are released under
+the [MIT](license).
 
 ## Credits
-The initial GitHub action has been created by [Stefan Stölzle](https://github.com/stoe) at
-[stoe/actions](https://github.com/stoe/actions).
 
 This fork is based on [ansible/ansible-lint-action](https://github.com/osism/ansible-lint-action).
+
+The initial GitHub action has been created by [Stefan Stölzle](https://github.com/stoe) at
+[stoe/actions](https://github.com/stoe/actions).
