@@ -5,7 +5,8 @@ RUN set -ex \
     && apt-get update \
     && apt-get -q install --no-install-recommends -y -V git \
     && rm -rf /var/lib/apt/lists/* \
-    && pip install --no-cache-dir 'ansible-lint==5.3.2' 'ansible==5.2.0'
+    && python3 -m pip install --upgrade pip \
+    && python3 -m pip install --no-cache-dir 'ansible-lint==5.3.2' 'ansible==5.2.0'
 
 COPY files/entrypoint.sh /entrypoint.sh
 
