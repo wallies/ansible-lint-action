@@ -82,6 +82,14 @@ override_python_packages() {
 # env:
 #   [required] TARGETS : Files or directories (i.e., playbooks, tasks, handlers etc..) to be linted
 ansible::lint() {
+
+  # set working directory
+  if [ "${INPUT_WORKING_DIR}" != "" ] && [ "${INPUT_WORKING_DIR}" != "." ]; then
+    GITHUB_WORKSPACE="/github/workspace/${INPUT_WORKING_DIR}"
+  else
+    GITHUB_WORKSPACE="/github/workspace"
+  fi
+
   : "${TARGETS?No targets to check. Nothing to do.}"
   : "${GITHUB_WORKSPACE?GITHUB_WORKSPACE has to be set. Did you use the actions/checkout action?}"
   pushd "${GITHUB_WORKSPACE}"

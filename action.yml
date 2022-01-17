@@ -41,6 +41,10 @@ inputs:
       override-deps allows pinning pip packages and there versions. This allows to pin to a target
       package version in order to maintain consistency with local development.
     required: false
+  working_dir:
+    description: 'Ansible working directory.'
+    required: false
+    default: ''
 runs:
   using: docker
   image: Dockerfile
