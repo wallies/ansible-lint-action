@@ -84,8 +84,8 @@ override_python_packages() {
 ansible::lint() {
 
   # set working directory
-  if [ "${INPUT_WORKING_DIR}" != "" ] && [ "${INPUT_WORKING_DIR}" != "." ]; then
-    GITHUB_WORKSPACE="/github/workspace/${INPUT_WORKING_DIR}"
+  if [ "${WORKING_DIR}" != "" ] && [ "${WORKING_DIR}" != "." ]; then
+    GITHUB_WORKSPACE="/github/workspace/${WORKING_DIR}"
   else
     GITHUB_WORKSPACE="/github/workspace"
   fi

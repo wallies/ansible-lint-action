@@ -53,3 +53,4 @@ runs:
   env:
     TARGETS: ${{ inputs.targets }}
     OVERRIDE: ${{ inputs.override-deps }}
+    WORKING_DIR: ${{ inputs.working_dir }}
