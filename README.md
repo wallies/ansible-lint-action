@@ -6,6 +6,7 @@ This action allows you to run `ansible-lint` with no additional options.
 |---------|--------------|---------|
 | main    | 5.3.2        | 5.2.0   |
 | v1.0.0  | 5.3.2        | 5.2.0   |
+| v1.1.0  | 5.4.0        | 5.4.0   |
 
 ## Usage
 
