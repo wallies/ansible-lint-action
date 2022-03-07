@@ -7,7 +7,7 @@ RUN set -ex \
     && apt-get update \
     && apt-get -q install --no-install-recommends -y -V git \
     && rm -rf /var/lib/apt/lists/* \
-    && python3 -m pip install --no-cache-dir --upgrade 'pip==21.3.1' \
+    && python3 -m pip install --no-cache-dir --upgrade 'pip==22.0.4' \
     && python3 -m pip install --no-cache-dir -r /requirements.txt \
     && rm /requirements.txt
 
