@@ -1,6 +1,25 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "commitBody": "Signed-off-by: Renovate Bot <bot@renovateapp.com>"
+   "extends": [
+      "github>osism/renovate-config"
+   ],
+   "regexManagers":[
+      {
+         "fileMatch":[
+            "^README.md$"
+         ],
+         "matchStrings":[
+            "(?<depName>ansible) version: (?<currentValue>.*?)"
+         ],
+         "datasourceTemplate":"pypi"
+      },
+      {
+         "fileMatch":[
+            "^README.md$"
+         ],
+         "matchStrings":[
+            "(?<depName>ansible-lint) version: (?<currentValue>.*?)"
+         ],
+         "datasourceTemplate":"pypi"
+      }
+   ]
 }
