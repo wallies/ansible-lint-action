@@ -5,7 +5,7 @@ This action allows you to run `ansible-lint` with no additional options.
 The following versions are available in the main branch:
 
 ```
-ansible version: 5.4.0
+ansible version: 5.5.0
 ansible-lint version: 5.4.0
 ```
 
@@ -13,6 +13,7 @@ The following versions are available in the releases:
 
 | Version | ansible-lint | ansible |
 |---------|--------------|---------|
+| v1.2.0  | 5.4.0        | 5.5.0   |
 | v1.1.0  | 5.4.0        | 5.4.0   |
 | v1.0.0  | 5.3.2        | 5.2.0   |
 
