@@ -8,7 +8,7 @@
             "^README.md$"
          ],
          "matchStrings":[
-            "(?<depName>ansible) version: (?<currentValue>.*?)"
+            "(?<depName>ansible) version: (?<currentValue>.*?)\n"
          ],
          "datasourceTemplate":"pypi"
       },
@@ -17,7 +17,7 @@
             "^README.md$"
          ],
          "matchStrings":[
-            "(?<depName>ansible-lint) version: (?<currentValue>.*?)"
+            "(?<depName>ansible-lint) version: (?<currentValue>.*?)\n"
          ],
          "datasourceTemplate":"pypi"
       }
