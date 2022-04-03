@@ -13,6 +13,7 @@ The following versions are available in the releases:
 
 | Version | ansible-lint | ansible |
 |---------|--------------|---------|
+| v2.0.0  | 6.0.2        | 5.5.0   |
 | v1.2.0  | 5.4.0        | 5.5.0   |
 | v1.1.0  | 5.4.0        | 5.4.0   |
 | v1.0.0  | 5.3.2        | 5.2.0   |
