@@ -6,7 +6,7 @@ The following versions are available in the main branch:
 
 ```
 ansible version: 5.5.0
-ansible-lint version: 5.4.0
+ansible-lint version: 6.0.2
 ```
 
 The following versions are available in the releases:
