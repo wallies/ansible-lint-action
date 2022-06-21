@@ -13,12 +13,20 @@ name: Check yaml syntax
       - '**.yaml'
       - '**.yml'
 
+permissions:
+  contents: read
+
 jobs:
   check-yaml-syntax:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Harden Runner
+        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
+      - uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
+      - uses: actions/setup-python@d09bd5e6005b175076f227b13d9730d56e9dcfcb
         with:
           python-version: '3.x'
       - run: pip3 install yamllint

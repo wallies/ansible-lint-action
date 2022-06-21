@@ -1,12 +1,13 @@
 ---
 name: Build container image
 
-"on":
+on:
   workflow_dispatch:
   push:
     paths:
       - .github/workflows/build-container-image.yml
       - Containerfile
+      - Dockerfile
       - requirements.txt
     branches:
       - main
@@ -14,17 +15,26 @@ name: Build container image
     paths:
       - .github/workflows/build-container-image.yml
       - Containerfile
+      - Dockerfile
       - requirements.txt
+
+permissions:
+  contents: read
 
 jobs:
   build-container-image:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
 
       - name: Setup docker
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@dc7b9719a96d48369863986a06765841d7ea23f6
 
       - name: Build container image
         run: docker buildx build --load .

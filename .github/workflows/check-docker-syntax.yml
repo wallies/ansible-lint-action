@@ -1,24 +1,31 @@
 ---
 name: Check docker syntax
 
-"on":
+on:
   push:
     paths:
       - "**/Containerfile"
+      - "**/Dockerfile"
       - .github/workflows/check-docker-syntax.yml
     branches:
       - main
   pull_request:
     paths:
       - "**/Containerfile"
+      - "**/Dockerfile"
       - .github/workflows/check-docker-syntax.yml
 
 jobs:
   check-docker-syntax:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: hadolint/hadolint-action@v2.1.0
+      - name: Harden Runner
+        uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
+      - uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
+      - uses: hadolint/hadolint-action@f988afea3da57ee48710a9795b6bb677cc901183
         with:
           dockerfile: Containerfile
           recursive: true
