@@ -17,8 +17,8 @@ jobs:
   check-docker-syntax:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: hadolint/hadolint-action@v1.6.0
+      - uses: actions/checkout@v3
+      - uses: hadolint/hadolint-action@v2.1.0
         with:
           dockerfile: Containerfile
           recursive: true

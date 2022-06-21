@@ -7,19 +7,21 @@ name: Build container image
     paths:
       - .github/workflows/build-container-image.yml
       - Containerfile
+      - requirements.txt
     branches:
       - main
   pull_request:
     paths:
       - .github/workflows/build-container-image.yml
       - Containerfile
+      - requirements.txt
 
 jobs:
   build-container-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup docker
         uses: docker/setup-buildx-action@v1

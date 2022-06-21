@@ -2,10 +2,36 @@
 
 This action allows you to run `ansible-lint` with no additional options.
 
+The following versions are available in the main branch:
+
+```
+ansible version: 5.5.0
+ansible-lint version: 6.0.2
+```
+
+The following versions are available in the releases:
+
 | Version | ansible-lint | ansible |
 |---------|--------------|---------|
-| main    | 5.3.2        | 5.2.0   |
+| v2.0.0  | 6.0.2        | 5.5.0   |
+| v1.2.0  | 5.4.0        | 5.5.0   |
+| v1.1.0  | 5.4.0        | 5.4.0   |
 | v1.0.0  | 5.3.2        | 5.2.0   |
+
+The versions of ansible and ansible-lint are updated regularly.
+
+If there is a change of the major version at ansible-lint or ansible
+then the major version is also incremented here.
+
+If the major versions of ansible-lint and ansible both change at the
+same time, our major version is only incremented once.
+
+Examples:
+
+* When ansible-lint jumps from 5.4.0 to 6.0.2 then our major version changes as well.
+* When ansible-lint jumps from 5.3.2 to 5.4.0 then our major version does not change.
+* When ansible jumps from 5.5.0 to 6.0.0 then our major version version changes as well.
+* When ansible jumps from 5.4.0 to 5.5.0 then our major version does not change.
 
 ## Usage
 
