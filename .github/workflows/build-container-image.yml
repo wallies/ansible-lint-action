@@ -31,7 +31,7 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - name: Checkout code
-        uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
+        uses: actions/checkout@1f9a0c22da41e6ebfa534300ef656657ea2c6707
 
       - name: Setup docker
         uses: docker/setup-buildx-action@dc7b9719a96d48369863986a06765841d7ea23f6
