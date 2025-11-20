@@ -25,7 +25,7 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - uses: actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28
-      - uses: hadolint/hadolint-action@54c9adbab1582c2ef04b2016b760714a4bfde3cf
+      - uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
           dockerfile: Containerfile
           recursive: true
